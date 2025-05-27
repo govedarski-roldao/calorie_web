@@ -13,11 +13,11 @@ class Calorie:
         self.age = age
 
     def calculate(self):
-        bmr = 10 * self.weight + 6.25 * self.height - 5 * self.age + 5 - 10 * self.temperature
+        bmr = 10 * self.weight + 6.25 * self.height - 5 * self.age + 5 - 10 * float(self.temperature)
         return bmr
 
 
 if __name__ == "__main__":
     temperature = Temperature("Bulgaria", "Sofia").get()
-    calories = Calorie(92, 180, 35, float(temperature))
+    calories = Calorie(92, 180, 35,temperature)
     print(calories.calculate())
